@@ -32,4 +32,5 @@ jobs:
         run: |
           aws s3 sync dist/ s3://$AWS_S3_BUCKET_NAME/container/latest --delete  # Faz o upload para o S3
         env:
-          AWS_S3_BUCKET_NAME: ${{ secrets.AWS_S3_BUCKET_NAME }} # Referencia o segredo AWS_S3_BUCKET_NAME como uma variável de ambiente
+          AWS_S3_BUCKET_NAME: ${{ secrets.AWS_S3_BUCKET_NAME }} # Referencia o segredo AWS_S3_BUCKET_NAME
+          AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }} # Certifique-se de passar a região corretamente
